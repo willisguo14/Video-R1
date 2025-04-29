@@ -6,7 +6,7 @@ model_paths=(
 )
 
 file_names=(
-    "eval_trial"
+    "debug"
 )
 
 export DECORD_EOF_RETRY_MAX=20480
