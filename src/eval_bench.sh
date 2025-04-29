@@ -2,11 +2,11 @@
 # run_models.sh
 
 model_paths=(
-    "Model Path"
+    "/data/hf_cache/Qwen2.5-VL-7B-COT-SFT/"
 )
 
 file_names=(
-    "FileName"
+    "eval_trial"
 )
 
 export DECORD_EOF_RETRY_MAX=20480

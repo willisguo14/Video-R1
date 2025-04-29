@@ -48,10 +48,10 @@ tokenizer.padding_side = "left"
 processor.tokenizer = tokenizer
 
 
-for dataset_name in ['mvbench','tempcompass','videomme','videommmu','vsibench','mmvu']:
-
-    OUTPUT_PATH = f"./src/r1-v/eval_results/eval_{dataset_name}_{file_name}_greedy_output.json"
-    PROMPT_PATH = f"./src/r1-v/Evaluation/eval_{dataset_name}.json"
+# for dataset_name in ['mvbench','tempcompass','videomme','videommmu','vsibench','mmvu']:
+for dataset_name in ['vsibench']:
+    OUTPUT_PATH = f"./Video-R1/src/r1-v/eval_results/eval_{dataset_name}_{file_name}_greedy_output.json"
+    PROMPT_PATH = f"./Video-R1/src/r1-v/Evaluation/eval_{dataset_name}.json"
     
     if PROMPT_PATH.endswith('.jsonl'):
         with open(PROMPT_PATH, "r", encoding="utf-8") as f:
@@ -94,7 +94,7 @@ for dataset_name in ['mvbench','tempcompass','videomme','videommmu','vsibench','
             "content": [
                 {
                     "type": x['data_type'],
-                    x['data_type']: os.getcwd() + "/src/r1-v" + x['path'][1:]
+                    x['data_type']: os.getcwd() + "/Video-R1/src/r1-v" + x['path'][1:]
                 },
                 {
                     "type": "text",
