@@ -28,7 +28,7 @@ file_name = args.file_name
 llm = LLM(
     model=MODEL_PATH,
     tensor_parallel_size=torch.cuda.device_count(),
-    max_model_len = 8192,
+    max_model_len = 8192 * 2,
     gpu_memory_utilization=0.8,
     limit_mm_per_prompt={"image": 1, "video": 1},
 )
@@ -94,7 +94,7 @@ for dataset_name in ['vsibench']:
             "content": [
                 {
                     "type": x['data_type'],
-                    x['data_type']: os.getcwd() + "/src/r1-v" + x['path'][1:]
+                    x['data_type']: os.getcwd() + "/src/r1-v/Evaluation" + x['path'][1:]
                 },
                 {
                     "type": "text",
@@ -229,6 +229,7 @@ for dataset_name in ['vsibench']:
             
         except Exception as e:
             print('error:', data[i]['path'])
+            print('Exception:', e)
             batch_output_text = ['<answer>error</answer>'] * BSZ
             
 
